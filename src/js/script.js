@@ -66,6 +66,12 @@
       console.log('testProduct:', testProduct);
     },
 
+    initData: function(){
+      const thisApp = this;
+
+      thisApp.data = dataSource;
+    },
+
     init: function(){
       const thisApp = this;
       console.log('*** App starting ***');
