@@ -61,6 +61,8 @@
 
       thisProduct.renderInMenu();
 
+      thisProduct.initAccordion();
+
       console.log('new Product:', thisProduct);
     }
 
@@ -74,6 +76,12 @@
       const menuContainer = document.querySelector(select.containerOf.menu);
       
       menuContainer.appendChild(thisProduct.element);
+    }
+
+    initAccordion(){
+      const thisProduct = this;
+
+      
     }
   }
 
