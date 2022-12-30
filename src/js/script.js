@@ -100,13 +100,13 @@
       thisProduct.accordionTrigger.addEventListener('click', function(event) {
         event.preventDefault();
 
-        const activeProduct = document.querySelector(classNames.menuProduct.wrapperActive);
+        const activeProduct = document.querySelector(select.all.menuProductsActive);
 
-        if( ((activeProduct != null) && activeProduct.contains('active')) && (activeProduct != thisProduct.element) ){
-          activeProduct.classList.remove('active');
+        if (activeProduct != null && activeProduct != thisProduct.element) {
+          activeProduct.classList.remove(classNames.menuProduct.wrapperActive);
         }
 
-        thisProduct.element.classList.toggle('active');
+        thisProduct.element.classList.toggle(classNames.menuProduct.wrapperActive);
       });
     }
 
