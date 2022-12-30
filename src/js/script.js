@@ -69,7 +69,6 @@
 
       thisProduct.processOrder();
 
-      console.log('new Product:', thisProduct);
     }
 
     renderInMenu(){
@@ -112,12 +111,12 @@
 
     initOrderForm(){
       const thisProduct = this;
-      console.log(initOrderForm);
+      console.log('initOrderForm');
     }
 
     processOrder(){
       const thisProduct = this;
-      console.log(processOrder);
+      console.log('processOrder');
     }
   }
 
