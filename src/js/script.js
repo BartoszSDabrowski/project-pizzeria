@@ -93,9 +93,7 @@
     initAccordion(){
       const thisProduct = this;
 
-      const clickableTrigger = thisProduct.element.querySelector(select.menuProduct.clickable);
-
-      clickableTrigger.addEventListener('click', function(event) {
+      thisProduct.accordionTrigger.addEventListener('click', function(event) {
         event.preventDefault();
 
         const activeProduct = document.querySelector(classNames.menuProduct.wrapperActive);
