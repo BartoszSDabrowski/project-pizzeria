@@ -145,14 +145,18 @@
           const selected = formData[paramId].includes(optionId);
 
           if(formData[paramId] && selected) {
+            
             if(!option.default) {
               price += option.price;
             }
+
           } else if (option.default) {
             price -= option.price;
           }
+        
         }
         thisProduct.priceElem.innerHTML = price;
+        
       }
     }
   }
