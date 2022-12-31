@@ -143,10 +143,7 @@
         for(let optionId in param.options) {
           const option = param.options[optionId];
 
-          // find picture associated with topping
           const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
-          
-          const selected = formData[paramId].includes(optionId);
 
           const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
 
