@@ -111,7 +111,6 @@
 
     initOrderForm(){
       const thisProduct = this;
-      console.log('initOrderForm');
 
       thisProduct.form.addEventListener('submit', function(event){
         event.preventDefault();
@@ -147,11 +146,9 @@
 
           if(formData[paramId] && selected) {
             if(!option.default) {
-              console.log('opt1');
               price += option.price;
             }
           } else if (option.default) {
-            console.log('opt2');
             price -= option.price;
           }
         }
