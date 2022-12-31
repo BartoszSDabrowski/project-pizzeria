@@ -142,10 +142,15 @@
 
         for(let optionId in param.options) {
           const option = param.options[optionId];
+
+          // find picture associated with topping
+          const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
           
           const selected = formData[paramId].includes(optionId);
 
-          if(formData[paramId] && selected) {
+          const optionSelected = formData[paramId] && formData[paramId].includes(optionId);
+
+          if(optionSelected) {
             
             if(!option.default) {
               price += option.price;
@@ -153,6 +158,10 @@
 
           } else if (option.default) {
             price -= option.price;
+          }
+
+          if((optionImage != null) && selected) {
+            thisProduct.imageWrapper.classList.add(classNames.menuProduct.imageVisible);
           }
         
         }
