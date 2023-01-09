@@ -6,7 +6,7 @@
   const select = {
     templateOf: {
       menuProduct: '#template-menu-product',
-      cartProduct: '#template-cart-product', // CODE ADDED
+      cartProduct: '#template-cart-product',
     },
     containerOf: {
       menu: '#product-list',
@@ -27,12 +27,12 @@
     },
     widgets: {
       amount: {
-        input: 'input.amount', // CODE CHANGED
+        input: 'input.amount',
         linkDecrease: 'a[href="#less"]',
         linkIncrease: 'a[href="#more"]',
       },
     },
-    // CODE ADDED START
+    
     cart: {
       productList: '.cart__order-summary',
       toggleTrigger: '.cart__summary',
@@ -288,6 +288,26 @@
 
       const event = new Event('updated');
       thisWidget.element.dispatchEvent(event);
+    }
+  }
+
+  class Cart{
+    constructor(element){
+      const thisCart = this;
+
+      thisCart.products = [];
+
+      thisCart.getElements(element);
+
+      console.log('new Cart', thisCart);
+    }
+
+    getElements(element){
+      const thisCart = this;
+
+      thisCart.dom = {};
+
+      thisCart.dom.wrapper = element;
     }
   }
 
