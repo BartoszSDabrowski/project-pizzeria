@@ -180,8 +180,10 @@
         
         }
         
-        thisProduct.priceElem.innerHTML = price;
+        /* Multiply price by amount */
+        price *= thisProduct.amountWidget.value;
 
+        thisProduct.priceElem.innerHTML = price;
       }
     }
   }
