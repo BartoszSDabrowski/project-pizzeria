@@ -221,6 +221,8 @@
       }
     }
 
+    thisWidget.announce();
+
     initActions(){
       const thisWidget = this;
 
@@ -241,6 +243,13 @@
           thisWidget.setValue(thisWidget.value += 1);
         }
       });
+    }
+
+    announce(){
+      const thisWidget = this;
+
+      const event = new Event('updated');
+      thisWidget.element.dispatchEvent(event);
     }
   }
 
