@@ -254,9 +254,7 @@
         thisWidget.value = newValue;
       }
 
-      if ((newValue >= (settings.amountWidget.defaultMin - 1)) && (newValue <= (settings.amountWidget.defaultMax + 1))) {
-        thisWidget.input.value = thisWidget.value;
-      }
+      thisWidget.input.value = thisWidget.value;
 
       thisWidget.announce();
     }
