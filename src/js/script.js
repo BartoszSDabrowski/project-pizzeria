@@ -190,6 +190,8 @@
 
       thisWidget.setValue(thisWidget.input.value);
 
+      thisWidget.initActions();
+
       console.log('AmountWidget:', thisWidget);
       console.log('constructor arguments:', element);
     }
@@ -215,6 +217,24 @@
       }
 
       thisWidget.input.value = thisWidget.value;
+    }
+
+    initActions(){
+      const thisWidget = this;
+
+      thisWidget.input.addEventListener('change', function(){
+        thisWidget.setValue(thisWidget.input.value);
+      });
+
+      thisWidget.linkDecrease.addEventListener('click', function(event){
+        event.preventDefault();
+        thisWidget.setValue(thisWidget.value -= 1);
+      });
+
+      thisWidget.linkIncrease.addEventListener('click', function(event){
+        event.preventDefault();
+        thisWidget.setValue(thisWidget.value += 1);
+      });
     }
   }
 
