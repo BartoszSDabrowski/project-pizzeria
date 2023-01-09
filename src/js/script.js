@@ -216,7 +216,9 @@
         thisWidget.value = newValue;
       }
 
-      thisWidget.input.value = thisWidget.value;
+      if ((newValue >= (settings.amountWidget.defaultMin - 1)) && (newValue <= (settings.amountWidget.defaultMax + 1))) {
+        thisWidget.input.value = thisWidget.value;
+      }
     }
 
     initActions(){
@@ -228,12 +230,16 @@
 
       thisWidget.linkDecrease.addEventListener('click', function(event){
         event.preventDefault();
-        thisWidget.setValue(thisWidget.value -= 1);
+        if ((thisWidget.value <= 10) && (thisWidget.value > 0)) {
+          thisWidget.setValue(thisWidget.value -= 1);
+        }
       });
 
       thisWidget.linkIncrease.addEventListener('click', function(event){
         event.preventDefault();
-        thisWidget.setValue(thisWidget.value += 1);
+        if ((thisWidget.value < 10) && (thisWidget.value >= 0)) {
+          thisWidget.setValue(thisWidget.value += 1);
+        }
       });
     }
   }
