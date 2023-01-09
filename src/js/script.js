@@ -174,17 +174,15 @@
               optionImage.classList.add(classNames.menuProduct.imageVisible);
             } else {
               optionImage.classList.remove(classNames.menuProduct.imageVisible);
-
             }
           }
-        
         }
-        
-        /* Multiply price by amount */
-        price *= thisProduct.amountWidget.value;
-
-        thisProduct.priceElem.innerHTML = price;
       }
+
+      /* Multiply price by amount */
+      price *= thisProduct.amountWidget.value;
+
+      thisProduct.priceElem.innerHTML = price;
     }
   }
 
