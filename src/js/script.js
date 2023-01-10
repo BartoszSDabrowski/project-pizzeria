@@ -377,6 +377,10 @@
 
       thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
     }
+
+    update(){
+      const thisCart = this;
+    }
   }
 
   class CartProduct{
