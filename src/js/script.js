@@ -280,9 +280,6 @@
       thisWidget.setValue(settings.amountWidget.defaultValue);
 
       thisWidget.initActions();
-
-      //console.log('AmountWidget:', thisWidget);
-      //console.log('constructor arguments:', element);
     }
 
     getElements(element){
@@ -349,8 +346,6 @@
       thisCart.getElements(element);
       
       thisCart.initActions();
-
-      //console.log('new Cart', thisCart);
     }
 
     getElements(element){
@@ -379,8 +374,6 @@
       const generatedDOM = utils.createDOMFromHTML(generatedHTML);
 
       thisCart.dom.productList.appendChild(generatedDOM);
-
-      //console.log('adding product', menuProduct);
 
       thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
     }
@@ -429,8 +422,6 @@
     initMenu: function(){
       const thisApp = this;
 
-      //console.log('thisApp.data:', thisApp.data);
-
       for(let productData in thisApp.data.products){
         new Product(productData, thisApp.data.products[productData]);
       }
@@ -451,11 +442,6 @@
 
     init: function(){
       const thisApp = this;
-      //console.log('*** App starting ***');
-      //console.log('thisApp:', thisApp);
-      //console.log('classNames:', classNames);
-      //console.log('settings:', settings);
-      //console.log('templates:', templates);
 
       thisApp.initData();
       thisApp.initMenu();
