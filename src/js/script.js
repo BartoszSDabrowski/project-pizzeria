@@ -350,7 +350,7 @@
       
       thisCart.initActions();
 
-      console.log('new Cart', thisCart);
+      //console.log('new Cart', thisCart);
     }
 
     getElements(element){
@@ -380,7 +380,7 @@
 
       thisCart.dom.productList.appendChild(generatedDOM);
 
-      console.log('adding product', menuProduct);
+      //console.log('adding product', menuProduct);
 
       thisCart.products.push(new CartProduct(menuProduct, generatedDOM));
     }
