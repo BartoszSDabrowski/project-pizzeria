@@ -213,6 +213,8 @@
           }
         }
       }
+      /* add single product price info */
+      thisProduct.priceSingle = price;
 
       /* Multiply price by amount */
       price *= thisProduct.amountWidget.value;
@@ -233,6 +235,8 @@
         id: thisProduct.id,
         name: thisProduct.data.name,
         amount: thisProduct.amountWidget.value;
+        priceSingle: thisProduct.priceSingle,
+        price: thisProduct.priceSingle * thisProduct.amountWidget.value,
       };
     }
   }
