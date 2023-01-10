@@ -458,7 +458,7 @@
       const thisCartProduct = this;
 
       const event = new CustomEvent('remove', {
-        bubbles: true;
+        bubbles: true,
         detail: {
           cartProduct: thisCartProduct,
         },
