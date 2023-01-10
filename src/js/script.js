@@ -316,12 +316,16 @@
 
       thisWidget.linkDecrease.addEventListener('click', function(event){
         event.preventDefault();
-        thisWidget.setValue(thisWidget.value - 1);
+        if ((thisWidget.value <= 10) && (thisWidget.value > 0)) {
+          thisWidget.setValue(thisWidget.value - 1);
+        }
       });
 
       thisWidget.linkIncrease.addEventListener('click', function(event){
         event.preventDefault();
-        thisWidget.setValue(thisWidget.value + 1);
+        if ((thisWidget.value < 10) && (thisWidget.value >= 0)) {
+          thisWidget.setValue(thisWidget.value + 1);
+        }
       });
     }
 
