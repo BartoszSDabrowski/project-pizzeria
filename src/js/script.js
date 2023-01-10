@@ -237,7 +237,7 @@
         amount: thisProduct.amountWidget.value,
         priceSingle: thisProduct.priceSingle,
         price: thisProduct.priceSingle * thisProduct.amountWidget.value,
-        params: {},
+        params: thisProduct.prepareCartProductParams(),
       };
 
       return productSummary;
@@ -256,7 +256,7 @@
         // create category param in params const eg. params = { ingredients: { name: 'Ingredients', options: {}}}
         params[paramId] = {
           label: param.label,
-          options: {}
+          options: {},
         }
 
         // for every option in this category
@@ -266,6 +266,7 @@
 
           if(optionSelected) {
             //option is selected!
+            params[paramId].options[optionId] = option.label;
           }
         }
       }
