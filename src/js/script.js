@@ -277,7 +277,7 @@
 
       thisWidget.getElements(element);
 
-      thisWidget.setValue(settings.amountWidget.defaultValue);
+      thisWidget.setValue(thisWidget.input.value || settings.amountWidget.defaultValue);
 
       thisWidget.initActions();
     }
@@ -316,16 +316,12 @@
 
       thisWidget.linkDecrease.addEventListener('click', function(event){
         event.preventDefault();
-        if ((thisWidget.value <= 10) && (thisWidget.value > 0)) {
-          thisWidget.setValue(thisWidget.value -= 1);
-        }
+        thisWidget.setValue(thisWidget.value - 1);
       });
 
       thisWidget.linkIncrease.addEventListener('click', function(event){
         event.preventDefault();
-        if ((thisWidget.value < 10) && (thisWidget.value >= 0)) {
-          thisWidget.setValue(thisWidget.value += 1);
-        }
+        thisWidget.setValue(thisWidget.value + 1);
       });
     }
 
@@ -360,7 +356,7 @@
       thisCart.dom.productList = thisCart.dom.wrapper.querySelector(select.cart.productList);
       thisCart.dom.deliveryFee = thisCart.dom.wrapper.querySelector(select.cart.deliveryFee);
       thisCart.dom.subtotalPrice = thisCart.dom.wrapper.querySelector(select.cart.subtotalPrice);
-      thisCart.dom.totalPrice = thisCart.dom.wrapper.querySelector(select.cart.totalPrice);
+      thisCart.dom.totalPrice = thisCart.dom.wrapper.querySelectorAll(select.cart.totalPrice);
       thisCart.dom.totalNumber = thisCart.dom.wrapper.querySelector(select.cart.totalNumber);
     }
 
@@ -407,16 +403,19 @@
         subtotalPrice += product.price;
       }
 
-      if(thisCart.subtotalPrice != 0) {
+      if(subtotalPrice != 0) {
         totalPrice = subtotalPrice + deliveryFee;
+        thisCart.dom.deliveryFee.innerHTML = deliveryFee;
       } else {
         totalPrice = 0;
+        thisCart.dom.deliveryFee.innerHTML = 0;
       }
 
       thisCart.dom.totalNumber.innerHTML = totalNumber;
-      thisCart.dom.deliveryFee.innerHTML = deliveryFee;
       thisCart.dom.subtotalPrice.innerHTML = subtotalPrice;
-      thisCart.dom.totalPrice.innerHTML = totalPrice;
+      for(let item of thisCart.dom.totalPrice){
+        item.innerHTML = totalPrice;
+      }
     }
 
     remove(event){
