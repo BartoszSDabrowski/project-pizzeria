@@ -397,6 +397,7 @@
       thisCartProduct.priceSingle = menuProduct.priceSingle;
 
       thisCartProduct.getElements(element);
+      thisCartProduct.initAmountWidget();
     }
 
     getElements(element){
@@ -409,8 +410,16 @@
         edit: element.querySelector(select.cartProduct.edit),
         remove: element.querySelector(select.cartProduct.remove),
       };
+    }
 
-      thisCartProduct.dom.wrapper = element;
+    initAmountWidget(){
+      const thisCartProduct = this;
+
+      thisCartProduct.amountWidget = new AmountWidget(thisCartProduct.dom.amountWidgetElem);
+
+      thisCartProduct.dom.amountWidgetElem.addEventListener('updated', function(){
+        
+      });
     }
   }
 
