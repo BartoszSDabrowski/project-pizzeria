@@ -386,7 +386,7 @@
     }
   }
 
-  class cartProduct{
+  class CartProduct{
     constructor(menuProduct, element){
       const thisCartProduct = this;
 
