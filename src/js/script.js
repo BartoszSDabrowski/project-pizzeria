@@ -387,6 +387,20 @@
     }
   }
 
+  class cartProduct{
+    constructor(menuProduct, element){
+      const thisCartProduct = this;
+
+      thisCartProduct.getElements(element)
+
+      thisCartProduct.id = menuProduct.id;
+      thisCartProduct.name = menuProduct.data.name;
+      thisCartProduct.amount = menuProduct.amountWidget.value;
+      thisCartProduct.priceSingle = menuProduct.priceSingle;
+      thisCartProduct.price = menuProduct.priceSingle * menuProduct.amountWidget.value;
+    }
+  }
+
   const app = {
     initMenu: function(){
       const thisApp = this;
