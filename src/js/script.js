@@ -527,6 +527,21 @@
         thisCartProduct.remove();
       });
     }
+
+    getData(){
+      const thisCartProduct = this;
+
+      const productsDataForOrder = {
+        id: thisCartProduct.id,
+        amount:thisCartProduct.amount,
+        price: thisCartProduct.price,
+        priceSingle: thisCartProduct.priceSingle,
+        name: thisCartProduct.name,
+        params: thisCartProduct.params,
+      };
+
+      return productsDataForOrder;
+    }
   }
 
   const app = {
