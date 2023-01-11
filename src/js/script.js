@@ -460,6 +460,20 @@
         deliveryFee: settings.cart.defaultDeliveryFee,
         products: [],
       };
+
+      for(let prod of thisCart.products) {
+        payload.products.push(prod.getData());
+      }
+
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(payload),
+      };
+
+      fetch(url, options)
     }
   }
 
